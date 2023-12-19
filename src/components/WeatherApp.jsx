@@ -19,7 +19,13 @@ const WeatherApp = () => {
             return 0 ;
         }
         let url=`https://api.openweathermap.org/data/2.5/weather?q=${element[0].value}&units=Metric&appid=${API_KEY}`;
+        try{
+
+        
         let response= await fetch(url);
+        if (!response.ok) {
+            
+        }
         let data=await response.json();
         const humidity=document.getElementsByClassName("humidity-percentage");
         const wind=document.getElementsByClassName("wind-rate");
@@ -63,7 +69,11 @@ const WeatherApp = () => {
             setWicon(clear_icon);
         }
             element[0].value="";
+    }catch(error){
+        alert('Enter City Name Properly!');
     }
+    }
+
   return (
     <div className='container'>
         <div className="topbar">
@@ -76,22 +86,22 @@ const WeatherApp = () => {
                 <img src={wicon} alt="" />
 
             </div>
-            <div className="weather-temp">24°c</div>
-            <div className="weather-location">London</div>
+            <div className="weather-temp"></div>
+            <div className="weather-location"></div>
             <div className="dataContainer">
                 <div className="elements">
                     <img src={humidity_icon} alt="" className='icon'/>
                     <div className="data">
-                        <div className="humidity-percentage">64%</div>
-                        <div className="text">Humidity</div>
+                        <div className="humidity-percentage"></div>
+                        <div className="text"></div>
                     </div>
                 </div>
 
                 <div className="elements">
                     <img src={wind_icon} alt="" className='icon'/>
                     <div className="data">
-                        <div className="wind-rate">18 km/h</div>
-                        <div className="text">wind speed</div>
+                        <div className="wind-rate"></div>
+                        <div className="text"></div>
                     </div>
                 </div>
             </div>

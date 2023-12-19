@@ -1,10 +1,16 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
 .container{
-    width: 407px;
-    height: 680px;
+    width: 35%;
+    height: 600px;
     margin: auto;
     margin-top: 42px;
     border-radius: 12px;
-    background-image: linear-gradient(180deg,#130754 0%, #3b2f80 100%);
+    background-image: linear-gradient(180deg,#227adf 0%, #6295ce 100%);
+    /* overflow-y: auto; */
 }
 .topbar{
     display: flex;
@@ -15,7 +21,7 @@
 }
 .topbar input{
     display: flex;
-    width: 270px;
+    width: 50%;
     height: 50px;
     outline: none;
     background: rgb(234, 228, 228);
@@ -68,4 +74,42 @@
 }
 .icon{
     margin-top: 8px;
+}
+
+
+@media (max-width: 330px) {
+    .container {
+        width: 100%;
+       
+    }
+
+     .topbar input {
+        max-width: 50%;
+    } 
+
+    .weather-temp {
+        font-size: 30px;
+    }
+
+    .weather-location {
+        font-size: 24px;
+    } 
+}
+@media (max-width: 700px) {
+    .container {
+        width: 90%;
+       
+    }
+
+     .topbar input {
+        max-width: 50%;
+    } 
+
+    .weather-temp {
+        font-size: 30px;
+    }
+
+    .weather-location {
+        font-size: 24px;
+    } 
 }
